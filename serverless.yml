@@ -1,0 +1,22 @@
+service: myservice
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+
+functions:
+  create_time_entry:
+    handler: aws_lambdas.create_time_entry
+    events:
+      - http:
+           path: /create_time_entry
+           method: POST
+
+plugins:
+  - serverless-offline
+
+custom:
+  serverless-offline:
+    noPrependStageInUrl: true
