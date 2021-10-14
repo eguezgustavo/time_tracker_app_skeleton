@@ -8,7 +8,7 @@ provider:
 
 functions:
   create_time_entry:
-    handler: aws_lambdas.create_time_entry
+    handler: time_entries.create_time_entry
     events:
       - http:
            path: /create_time_entry
